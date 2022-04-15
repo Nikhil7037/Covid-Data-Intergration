@@ -2,6 +2,7 @@ import pylab
 
 import pandas as pd
 import matplotlib.pyplot as plot
+import matplotlib
 
 owid_df=pd.read_csv("owid-covid-data.csv")
 owid_df.columns
@@ -14,7 +15,8 @@ us_tc.set_index('date',inplace=True)
 us_tc.plot(figsize=(12,6))
 
 # Plot a 30 day moving average
-us_tc.rolling(window=30).mean()['total_cases'].plot()
+graph = us_tc.rolling(window=30).mean()['total_cases'].plot()
+graph.get_yaxis().set_major_formatter(matplotlib.ticker.FuncFormatter(lambda x, p: format(int(x), ',')))
 plot.show()
 
 def plot_covid_data(country, col, plot_ma=False, y_max=200):
