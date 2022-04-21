@@ -35,7 +35,7 @@ for country in list_countries:
                             locations="iso_alpha",
                             color="Confirmed",  # value in column 'Confirmed' determines color
                             hover_name="Country",
-                            color_continuous_scale='RdYlGn',  # color scale red, yellow green
+                            color_continuous_scale='Turbo',  # color scale red, yellow green
                             animation_frame="Date")
 
         fig.show()

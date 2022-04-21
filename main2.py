@@ -15,7 +15,7 @@ us_tc.plot(figsize=(12,6))
 
 # Plot a 30 day moving average
 us_tc.rolling(window=30).mean()['total_cases'].plot()
-plot.show()
+#plot.show()
 
 def plot_covid_data(country, col, plot_ma=False, y_max=200):
     # Get indexes for location rows equal to country name
@@ -39,10 +39,10 @@ def plot_covid_data(country, col, plot_ma=False, y_max=200):
 
 # Least restrictive lockdown
 plot_covid_data('Sweden', 'new_cases_per_million', True)
-plot.show()
+#plot.show()
 
 # Most restrictive lockdown measures
 plot_covid_data('Bolivia', 'new_cases_per_million', True)
-plot.show()
+#plot.show()
 
 
